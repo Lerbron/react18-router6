@@ -1,0 +1,16 @@
+body{
+  background: bisque;
+}
+
+button{
+  display: block;
+  background: $color-blue;
+  color: $color-white;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  width: $l-100;
+  height: $l-40;
+  line-height: $l-40;
+  text-align: center;
+}
