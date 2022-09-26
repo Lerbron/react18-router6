@@ -7,7 +7,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const common = require('./webpack.common.js');
 const proxySetting = require('./proxy');
 const config = require('./config');
-// var vendorAssets = require("./../dist/vendor-assets.json")
 
 const setting= process.env.API_ENV == 'development' ? proxySetting.proxyDevSetting : proxySetting.proxyTestSetting
 
@@ -42,14 +41,8 @@ module.exports = merge(common, {
     proxy: {
       ...setting
     }, // 代理配置
-    // clientLogLevel: 'error',
-    // stats: "errors-only"
   },
   plugins: [
-    // new webpack.DllReferencePlugin({
-		// 	manifest: require(path.join(__dirname, './../dist', 'vendor.manifest.json')),
-    //   context: __dirname
-    // }),
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',

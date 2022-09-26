@@ -23,23 +23,23 @@ const {
 } = require("./utils");
 
 
-const getApiEnv= () => {
-  let api_env= process.env.API_ENV, url= './../config.js'
-  switch (api_env) {
-    case 'development':
-      url= './../config.dev.js';
-      break;
-    case 'test':
-      url= './../config.test.js';
-      break
-    case 'uat':
-      url= './../config.uat.js';
-      break
-    default:
-      url='./../config.js'
-  }
-  return url
-}
+// const getApiEnv= () => {
+//   let api_env= process.env.API_ENV, url= './../config.js'
+//   switch (api_env) {
+//     case 'development':
+//       url= './../config.dev.js';
+//       break;
+//     case 'test':
+//       url= './../config.test.js';
+//       break
+//     case 'uat':
+//       url= './../config.uat.js';
+//       break
+//     default:
+//       url='./../config.js'
+//   }
+//   return url
+// }
 
 module.exports = {
   entry: path.resolve(__dirname, "../src/index.js"),
@@ -71,7 +71,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: getCssLoaders(1),
-        // exclude: /node_modules/,
+        exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
@@ -130,18 +130,7 @@ module.exports = {
       reporter: new Reporter()
     }),
     new CaseSensitivePathsPlugin(),
-    // new webpack.IgnorePlugin(/\.\/locale/, /moment/),
 		new FriendlyErrorsWebpackPlugin(),
-    // new CopyPlugin({
-    //   patterns: [
-    //     { from: path.resolve(__dirname, getApiEnv()), to: path.resolve(__dirname , './../dist/config.js') },
-    //     { from: path.resolve(__dirname, './../pdf'), to: path.resolve(__dirname , './../dist/pdf/') },
-    //     { from: path.resolve(__dirname, './../favicon.ico'), to: path.resolve(__dirname , './../dist/favicon.ico') },
-    //     { from: path.resolve(__dirname, './../libs'), to: path.resolve(__dirname , './../dist/libs') },
-    //     { from: path.resolve(__dirname, './../public/s'), to: path.resolve(__dirname , './../dist/s') },
-    //     { from: path.resolve(__dirname, './../wasms'), to: path.resolve(__dirname , './../dist/wasms') }
-    //   ],
-    // }),
   ],
 	stats: "errors-only",
 
