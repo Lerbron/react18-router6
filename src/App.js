@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import AppRouter from "@/router/index";
+import router from "@/router/index";
+import { RouterProvider } from 'react-router-dom'
 
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
@@ -13,7 +14,7 @@ function App() {
 
   return (
     <Provider store={store}>
-      <AppRouter />
+      <RouterProvider router={router} />
     </Provider>
   );
 }
