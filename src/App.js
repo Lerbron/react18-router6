@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import router from "@/router/index";
 import { RouterProvider } from 'react-router-dom'
-
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
-import thunkMiddleware from "redux-thunk";
-import reducers from "@/reducers/index";
+// import { configureStore } from '@reduxjs/toolkit'
+import store from "@/store";
 
-
-export const store = createStore(reducers, applyMiddleware(thunkMiddleware));
+// export const store = configureStore({
+//   reducer: reducers,
+// })
 
 function App() {
 
