@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { getNews } from "@/service/servers";
 
 const initialState= {
   listInfo: {
@@ -6,14 +7,6 @@ const initialState= {
     status: 'idle'
   },
   userInfo: null
-}
-
-const apiHomeList= (id) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve && resolve([id, 1, 2, 3])
-    }, 3000)
-  })
 }
 
 const apiUserInfo= userId => {
@@ -24,9 +17,10 @@ const apiUserInfo= userId => {
   }) 
 }
 
-export const getHomeList= createAsyncThunk('test/fetchHomeList', async (id, thunk) => {
-  let data= await apiHomeList(id)
-  return data
+export const getHomeList= createAsyncThunk('test/fetchHomeList', async (params, thunk) => {
+  let result= await getNews(params)
+  console.log('result-->', result)
+  return result?.data?.data|| []
 })
 
 export const getUserInfo= createAsyncThunk('test/fetchUserInfo', async(userId, thunk) => {

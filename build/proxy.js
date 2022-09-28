@@ -1,16 +1,16 @@
 const proxyTestSetting = {
-	'/api/': {
-		target: 'https://www.baidu.com',
-		changeOrigin: true,
-	},
+	"/api": {
+    target: "https://cnodejs.org",
+    changeOrigin: true
+  }
 	
 }
 
 const proxyDevSetting = {
-	'/api/': {
-		target: 'https://www.baidu.com',
-		changeOrigin: true,
-	},
+	"/api": {
+    target: "https://cnodejs.org",
+    changeOrigin: true
+  }
 
 }
 
