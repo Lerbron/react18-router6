@@ -20,11 +20,11 @@
         },
         "useESModules": true
       }
-    ]
-    // ["import", {
-    //   "style": "css",
-    //   "libraryName": "antd",
-    //   "libraryDirectory": "es"
-    // }]
+    ],
+    ["import", {
+      "style": "css",
+      "libraryName": "antd",
+      "libraryDirectory": "es"
+    }]
   ]
 }

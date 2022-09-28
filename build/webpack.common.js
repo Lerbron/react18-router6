@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const AntdDayjsWebpackPlugin= require('antd-dayjs-webpack-plugin');
 const WebpackBar = require("webpackbar");
 const os = require('os');
 const threadPool = os.cpus().length - 1;
@@ -71,7 +72,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: getCssLoaders(1),
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
@@ -160,6 +161,7 @@ module.exports = {
         minifyURLs: true
       }
     }),
+    new AntdDayjsWebpackPlugin()
   ],
 	stats: "errors-only",
 

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux'
 import { increment, incrementByAmount } from '@/store/modules/counter'
 import { getHomeList, getUserInfo } from '@/store/modules/test'
+import { Button, DatePicker } from 'antd'
  
 export default () => {
   const navigate= useNavigate()
@@ -67,7 +68,7 @@ export default () => {
 
   return <div>
     Home Page
-    <button onClick={goPage1}>To page1</button>
+    <br />
     count: {count}
     <button onClick={onAdd}>count add</button>
     <br />
@@ -79,5 +80,9 @@ export default () => {
     userId: {userInfo?.userId}<br />
     name: {userInfo?.name}<br />
     age: { userInfo?.age}
+    <br />
+
+    <Button type="primary">antd button</Button>
+    <DatePicker />
   </div>
 }
