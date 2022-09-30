@@ -4,7 +4,9 @@ import { getNews } from "@/service/servers";
 const initialState= {
   listInfo: {
     items: [],
-    status: 'idle'
+    status: 'idle',
+    page: 1,
+    hasMore: true
   },
   userInfo: null
 }
@@ -40,9 +42,14 @@ const counterSlice = createSlice({
         state.listInfo.status= 'pending'
       })
       .addCase(getHomeList.fulfilled, (state, action) => {
+        let page= state.listInfo.page, hasMore= true
+        if (page > 5) hasMore= false
+        let newPage= hasMore ? page + 1 : page
         state.listInfo= {
-          items: action.payload,
-          status: 'succeeded'
+          items: [...state.listInfo.items, ...action.payload],
+          status: 'succeeded',
+          page: newPage,
+          hasMore
         }
       })
       .addCase(getHomeList.rejected, (state, action) => {

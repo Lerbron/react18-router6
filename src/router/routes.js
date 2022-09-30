@@ -1,8 +1,8 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
 import Home from "@/containers/Home";
 import Page1 from "@/containers/Page1";
 import Login from "@/containers/Login";
+import List from '@/containers/List'
 import NotFound from "@/containers/NotFound";
 
 const routes= [
@@ -11,11 +11,15 @@ const routes= [
     element: Home,
   },
   {
-    path: 'page/:id',
+    path: '/page/:id',
     element: Page1,
     meta: {
       requireAuth: true
     }
+  },
+  {
+    path: '/list',
+    element: List
   },
   {
     path: '/login',

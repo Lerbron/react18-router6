@@ -1,4 +1,4 @@
-#### fronted-tml use React18, React-Router v6, Redux, Webpack5 for rapid application development (HMR).
+#### fronted-tml use React18, React-Router v6, Redux toolkit, Webpack5, antd for rapid application development (HMR).
 
 ## node version
 node version >= 14.15.0

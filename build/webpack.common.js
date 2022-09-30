@@ -161,7 +161,12 @@ module.exports = {
         minifyURLs: true
       }
     }),
-    new AntdDayjsWebpackPlugin()
+    new AntdDayjsWebpackPlugin(),
+    // new webpack.IgnorePlugin({
+    //   resourceRegExp: /^\.\/locale$/,
+    //   contextRegExp: /moment$/,
+    // })
+
   ],
 	stats: "errors-only",
 

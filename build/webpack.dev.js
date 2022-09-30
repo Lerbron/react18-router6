@@ -1,8 +1,6 @@
 const { merge } = require('webpack-merge');
 const webpack = require('webpack');
-const path= require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const common = require('./webpack.common.js');
 const proxySetting = require('./proxy');

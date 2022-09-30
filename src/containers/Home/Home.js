@@ -16,7 +16,9 @@ export default () => {
   const renderList= () => {
     let { items }= listInfo
     return items?.length > 0 && items?.map(item => {
-      return <div key={item.id} onClick={()=>goDetail(item.id)}>{item?.title}</div>
+      return <div key={item.id} onClick={()=>goDetail(item.id)}>
+        <div>{item?.title}</div>
+      </div>
     })
   }
 
@@ -24,9 +26,6 @@ export default () => {
     navigate(`/page/${id}`)
   }
 
-  const goPage1= () => {
-    navigate('/page/1?title=111')
-  }
   const onAdd= () => {
     dispatch(increment())
   }
