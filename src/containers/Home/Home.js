@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { increment, incrementByAmount } from '@/store/modules/counter'
 import { getHomeList, getUserInfo } from '@/store/modules/test'
 import { Button, DatePicker } from 'antd'
+
+import AutoHeightInput from "@/components/Form/AutoHeightInput";
  
 export default () => {
   const navigate= useNavigate()
@@ -11,6 +13,7 @@ export default () => {
   const { count } = useSelector(state => state.counter)
   const { listInfo, userInfo } = useSelector(state => state.test)
   const [page, setPage]= useState(1)
+  const [defaultValue, setDefaultValue]= useState('')
 
 
   const renderList= () => {
@@ -57,6 +60,9 @@ export default () => {
 
   useEffect(() => {
     dispatch(getUserInfo(6))
+    setTimeout(() => {
+      setDefaultValue('dkjfak的咖啡机的咖啡机哦发的的咖啡机的苦dadklf d打卡发达的房间啊抖啊减肥fdalkf 的拉风')
+    }, 3000)
   }, [])
 
 
@@ -83,5 +89,11 @@ export default () => {
 
     <Button type="primary">antd button</Button>
     <DatePicker />
+
+    <AutoHeightInput
+      placeholder='请输入内容'
+      defaultValue={defaultValue}
+
+    />
   </div>
 }
