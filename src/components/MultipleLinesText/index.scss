@@ -1,0 +1,68 @@
+.wrapper {
+  display: flex;
+  overflow: hidden;
+
+  [line-clamp="5"]{
+    max-height: 7.5em;
+  }
+}
+.text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: justify;
+  position: relative;
+  line-height: 1.5;
+  max-height: 4.5em;
+  transition: 1s max-height;
+}
+.text::before {
+  content: '';
+  height: calc(100% - 18px);
+  float: right;
+}
+// .text::after {
+//   content: '';
+//   width: 999vw;
+//   height: 999vw;
+//   position: absolute;
+// }
+.btn{
+  position: relative;
+  float: right;
+  clear: both;
+  margin-left: 16px;
+  padding: 0 8px;
+  background: #3F51B5;
+  border-radius: 4px;
+  color:  #fff;
+  cursor: pointer;
+}
+.fold-btn.btn{
+  float: initial;
+  margin-left: 0;
+}
+.btn::after{
+  content: attr(unfold-text)
+}
+.exp{
+  display: none;
+}
+.exp:checked+.text{
+  max-height: none;
+}
+.exp:checked+.text::after{
+  visibility: hidden;
+}
+.exp:checked+.text .btn::before{
+  visibility: hidden;
+}
+.exp:checked+.text .btn::after{
+  content: attr(fold-text)
+}
+.btn::before{
+  content: '...';
+  position: absolute;
+  left: -2px;
+  color: #333;
+  transform: translateX(-100%)
+}
