@@ -88,7 +88,8 @@ module.exports = {
             loader: 'sass-resources-loader',
             options: {
               resources: [
-                path.resolve(__dirname, './../src/assets/styles/common.scss')
+                path.resolve(__dirname, './../src/assets/styles/common.scss'),
+                path.resolve(__dirname, './../src/assets/styles/themes/mixin.scss'),
               ]
             }
           }

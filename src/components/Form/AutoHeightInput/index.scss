@@ -8,4 +8,13 @@
   outline: none;
   resize: none;
   max-height: 115px;
+  @include font_color('light');
+  @include bg_color('light');
+}
+
+@media (prefers-color-scheme: dark) {
+  .auto-height-input{
+    @include bg_color('dark');
+    @include font_color('dark')
+  }
 }

@@ -1,6 +1,7 @@
 body{
-  background: bisque;
   font-size: 12px;
+  @include bg_color('light');
+  @include font_color('light')
 }
 
 button{
@@ -14,4 +15,12 @@ button{
   // height: $l-40;
   // line-height: $l-40;
   text-align: center;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  body{
+    @include bg_color('dark');
+    @include font_color('dark')
+  }
 }

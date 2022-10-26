@@ -51,6 +51,16 @@ export default () => {
   }
 
 
+  const onChangeTheme= () => {
+    let dataTheme= document.documentElement.getAttribute('data-theme')
+    if (dataTheme) {
+      document.documentElement.setAttribute('data-theme', '')
+      return null
+    }
+    document.documentElement.setAttribute('data-theme', 'dark')
+
+  }
+
   useEffect(() => {
     console.log('count----->', count)
   }, [count])
@@ -73,7 +83,7 @@ export default () => {
 
 
   return <div>
-    Home Page
+    Home Page <Button onClick={onChangeTheme}>change theme</Button>
     <br />
     count: {count}
     <button onClick={onAdd}>count add</button>
