@@ -1,7 +1,7 @@
 body{
   font-size: 12px;
-  @include bg_color('light');
-  @include font_color('light')
+  @include bg_color();
+  @include font_color()
 }
 
 button{
@@ -18,9 +18,9 @@ button{
 }
 
 
-@media (prefers-color-scheme: dark) {
-  body{
-    @include bg_color('dark');
-    @include font_color('dark')
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   body{
+//     @include bg_color('dark');
+//     @include font_color('dark')
+//   }
+// }

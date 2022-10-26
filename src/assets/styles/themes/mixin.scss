@@ -1,17 +1,31 @@
 @import "./variable.scss";
 
-@mixin bg_color($mode) {
-  @if $mode == dark {
+// @mixin bg_color($mode) {
+//   @if $mode == dark {
+//     background: $background-color-theme-dark;
+//   } @else {
+//     background: $background-color-theme;
+//   }
+// }
+
+// @mixin font_color($mode) {
+//   @if $mode == dark {
+//     color: $font-color-dark;
+//   } @else {
+//     color: $font-color;
+//   }
+// }
+
+@mixin bg_color() {
+  background: $background-color-theme;
+  [data-name=dark] & {
     background: $background-color-theme-dark;
-  } @else {
-    background: $background-color-theme;
   }
 }
 
-@mixin font_color($mode) {
-  @if $mode == dark {
+@mixin font_color() {
+  color: $font-color;
+  [data-name=dark] & {
     color: $font-color-dark;
-  } @else {
-    color: $font-color;
   }
 }
