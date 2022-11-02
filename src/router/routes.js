@@ -4,6 +4,7 @@ import Page1 from "@/containers/Page1";
 import Login from "@/containers/Login";
 import List from '@/containers/List'
 import NotFound from "@/containers/NotFound";
+import Graph from "@/containers/Graph";
 
 const routes= [
   {
@@ -24,6 +25,10 @@ const routes= [
   {
     path: '/login',
     element: Login
+  },
+  {
+    path: '/graph',
+    element: Graph
   },
   {
     path: '/404',
