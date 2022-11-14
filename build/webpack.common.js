@@ -97,18 +97,22 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-        use: [{
-          loader: 'file-loader',
-          options: {
-            limit: 10 * 1024,
-            name: "static/img/[name].[ext]",
-            esModule: false
-          },
-        }],
+        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/[hash][ext][query]'
+        }
+        // use: [{
+        //   loader: 'file-loader',
+        //   options: {
+        //     limit: 10 * 1024,
+        //     name: "static/img/[name].[ext]",
+        //     esModule: false
+        //   },
+        // }],
       },
       {
-        test: /\.(ttf|woff|woff2|eot|otf|svg)$/,
+        test: /\.(ttf|woff|woff2|eot|otf)$/,
         use: [{
           loader: 'file-loader',
           options: {
