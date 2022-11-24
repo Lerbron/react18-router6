@@ -702,13 +702,12 @@ export default function NewMentionsPlugin() {
       const anchor = selection.anchor;
       
       const anchorNode = anchor.getNode();
-      if ($isMentionFirstNode(anchorNode) || $isMentionFirstNode(anchorNode.getParent())) return null
       
       let reg= /\s@$/
       const selectionOffset = anchor.offset;
       const textContent = anchorNode.getTextContent().slice(0, selectionOffset);
       let newNode;
-      if (selectionOffset == 0 && $isMentionFirstNode(anchorNode)) {
+      if (selectionOffset == 0 && ($isMentionFirstNode(anchorNode) || $isMentionFirstNode(anchorNode.getParent()))) {
         anchorNode.remove()
         lastSelectionOffsetRef.current= selectionOffset
         return null

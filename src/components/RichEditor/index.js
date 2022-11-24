@@ -45,24 +45,32 @@ const defaultJson={
           {
               "children": [
                   {
-                      "detail": 1,
-                      "format": 0,
-                      "mode": "segmented",
-                      "style": "",
-                      "text": "Admiral Firmus Piett",
-                      "type": "mention",
-                      "version": 1,
-                      "mentionName": "Admiral Firmus Piett"
+                      "children": [
+                          {
+                              "detail": 0,
+                              "format": 0,
+                              "mode": "normal",
+                              "style": "",
+                              "text": "@fd",
+                              "type": "text",
+                              "version": 1
+                          }
+                      ],
+                      "direction": "ltr",
+                      "format": "",
+                      "indent": 0,
+                      "type": "mentionfirst",
+                      "version": 1
                   }
               ],
-              "direction": null,
+              "direction": "ltr",
               "format": "",
               "indent": 0,
               "type": "paragraph",
               "version": 1
           }
       ],
-      "direction": null,
+      "direction": "ltr",
       "format": "",
       "indent": 0,
       "type": "root",
@@ -125,7 +133,7 @@ export default function Editor() {
 
   // useEffect(() => {
   //   setTimeout(() => {
-  //     setDefaultHtml(_defaultHtml)
+  //     setDefaultHtml(defaultJson)
   //   }, 3000)
   // }, [])
 

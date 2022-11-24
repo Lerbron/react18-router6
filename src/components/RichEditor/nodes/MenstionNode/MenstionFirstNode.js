@@ -13,9 +13,6 @@ export class MentionFirstNode extends ElementNode {
   static importJSON(serializedNode) {
     const node = $createMentionFirstNode();
     node.setFormat(serializedNode.format);
-    node.setDetail(serializedNode.detail);
-    node.setMode(serializedNode.mode);
-    node.setStyle(serializedNode.style);
     return node;
   }
 
@@ -40,15 +37,6 @@ export class MentionFirstNode extends ElementNode {
   canInsertTextBefore() {
     return false;
   }
-  // insertNewAfter(selection) {
-  //   const element = this.getParentOrThrow().insertNewAfter(selection);
-  //   if ($isElementNode(element)) {
-  //     const _node = $createMentionFirstNode();
-  //     element.append(_node);
-  //     return _node;
-  //   }
-  //   return null;
-  // }
 
   canInsertTextAfter() {
     return true;
