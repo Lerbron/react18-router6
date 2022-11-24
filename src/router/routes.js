@@ -5,6 +5,7 @@ import Login from "@/containers/Login";
 import List from '@/containers/List'
 import NotFound from "@/containers/NotFound";
 import Graph from "@/containers/Graph";
+import Editor from "@/containers/Editor";
 
 const routes= [
   {
@@ -29,6 +30,10 @@ const routes= [
   {
     path: '/graph',
     element: Graph
+  },
+  {
+    path: 'editor',
+    element: Editor
   },
   {
     path: '/404',

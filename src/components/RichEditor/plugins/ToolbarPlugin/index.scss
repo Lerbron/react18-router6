@@ -1,0 +1,21 @@
+.toolbar-container{  
+  transition: all 0.3s;
+
+  .toolbar-top{
+    height: 32px;
+  }
+  .toolbar-bottom{
+    height: 32px;
+  }
+}
+
+.rich-editor-toolbar-wrap{
+  height: 32px;
+  overflow: hidden;
+  margin-bottom: 12px;
+
+}
+
+.page-up.toolbar-container{
+  transform: translateY(-32px);
+}

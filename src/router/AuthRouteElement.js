@@ -1,14 +1,7 @@
 import React from "react";
 
 import {Navigate} from "react-router-dom";
-import { checkIsLogin, login, handleLoginRedirectUrl } from "@/utils/userManager";
-// import { AxiosCanceler } from "@/api/helper/axiosCancel";
-// import { searchRoute } from "@/utils/util";
-// import { rootRouter } from "@/routers/index";
-// import { HOME_URL } from "@/config/config";
-// import { store } from "@/redux/index";
-
-// const axiosCanceler = new AxiosCanceler();
+import { checkIsLogin, handleLoginRedirectUrl } from "@/utils/userManager";
 
 /**
  * @description 路由守卫组件

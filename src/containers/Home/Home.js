@@ -7,6 +7,8 @@ import { Button, DatePicker } from 'antd'
 
 import AutoHeightInput from "@/components/Form/AutoHeightInput";
 import MultipleLinesText from "../../components/MultipleLinesText";
+
+import './index.scss'
  
 export default () => {
   const navigate= useNavigate()
