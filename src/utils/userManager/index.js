@@ -19,7 +19,7 @@ export function login() {
 export function signOut(history) {
   clearLoginInfo()
   setTimeout(() => {
-    history ? history.replace('/user/account') : location.href= '/user/account'
+    history ? history.replace('/login') : location.href= '/login'
   }, 30)
 }
 

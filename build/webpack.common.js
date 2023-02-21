@@ -56,7 +56,7 @@ module.exports = {
         use: [{
             loader: 'thread-loader',
             options: {
-              workers: threadPool // 进程2个
+              workers: threadPool
             }
           },
           {

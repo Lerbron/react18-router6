@@ -10,8 +10,8 @@ import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 import { OnChangePlugin } from '@lexical/react/LexicalOnChangePlugin';
 import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary';
 import { AutoFocusPlugin } from '@lexical/react/LexicalAutoFocusPlugin';
-import {AutoScrollPlugin} from '@lexical/react/LexicalAutoScrollPlugin';
-import {ListPlugin} from '@lexical/react/LexicalListPlugin';
+import { AutoScrollPlugin } from '@lexical/react/LexicalAutoScrollPlugin';
+import { ListPlugin } from '@lexical/react/LexicalListPlugin';
 
 // import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin';
 // import CollapsiblePlugin from './plugins/CollapsiblePlugin';
@@ -39,46 +39,46 @@ import './index.scss'
 import { useCallback } from 'react';
 import { Button } from 'antd';
 
-const defaultJson={
+const defaultJson = {
   "root": {
-      "children": [
+    "children": [
+      {
+        "children": [
           {
-              "children": [
-                  {
-                      "children": [
-                          {
-                              "detail": 0,
-                              "format": 0,
-                              "mode": "normal",
-                              "style": "",
-                              "text": "@fd",
-                              "type": "text",
-                              "version": 1
-                          }
-                      ],
-                      "direction": "ltr",
-                      "format": "",
-                      "indent": 0,
-                      "type": "mentionfirst",
-                      "version": 1
-                  }
-              ],
-              "direction": "ltr",
-              "format": "",
-              "indent": 0,
-              "type": "paragraph",
-              "version": 1
+            "children": [
+              {
+                "detail": 0,
+                "format": 0,
+                "mode": "normal",
+                "style": "",
+                "text": "@fd",
+                "type": "text",
+                "version": 1
+              }
+            ],
+            "direction": "ltr",
+            "format": "",
+            "indent": 0,
+            "type": "mentionfirst",
+            "version": 1
           }
-      ],
-      "direction": "ltr",
-      "format": "",
-      "indent": 0,
-      "type": "root",
-      "version": 1
+        ],
+        "direction": "ltr",
+        "format": "",
+        "indent": 0,
+        "type": "paragraph",
+        "version": 1
+      }
+    ],
+    "direction": "ltr",
+    "format": "",
+    "indent": 0,
+    "type": "root",
+    "version": 1
   }
 }
 
-const _defaultHtml= `<code class="PlaygroundEditorTheme__code" spellcheck="false" data-highlight-language="javascript"><span class="PlaygroundEditorTheme__tokenAttr">let</span><span> a</span><span class="PlaygroundEditorTheme__tokenOperator">=</span><span> </span><span class="PlaygroundEditorTheme__tokenProperty">1</span><span class="PlaygroundEditorTheme__tokenPunctuation">;</span></code>`
+const _defaultHtml = ``
 
 function onError(error) {
   console.error(error);
@@ -87,12 +87,12 @@ function onError(error) {
 
 export default function Editor() {
 
-  
+
   const [html, setHtml] = useState('')
-  const [defaultHtml, setDefaultHtml]= useState('')
-  const editorRef= useRef(null)
+  const [defaultHtml, setDefaultHtml] = useState('')
+  const editorRef = useRef(null)
   const scrollRef = useRef(null);
-  
+
   const initialConfig = {
     namespace: 'MyEditor',
     theme,
@@ -102,7 +102,7 @@ export default function Editor() {
   };
 
 
-  
+
   const onChange = (editorState) => {
     editorState.read(() => {
       // Read the contents of the EditorState here.
@@ -112,18 +112,18 @@ export default function Editor() {
     });
   }
 
-  const bindEditor= useCallback((editor) => {
-    editorRef.current= editor
+  const bindEditor = useCallback((editor) => {
+    editorRef.current = editor
   }, [])
 
   const onSave = () => {
     let editor = editorRef.current
     editor.update(() => {
       const editorState = editor.getEditorState();
-      const json= editorState.toJSON()
+      const json = editorState.toJSON()
       // const jsonString = JSON.stringify(editorState);
       console.log('json', json);
-  
+
       const htmlString = $generateHtmlFromNodes(editor, null);
       console.log('htmlString', htmlString);
       setHtml(htmlString)
@@ -133,7 +133,7 @@ export default function Editor() {
 
   // useEffect(() => {
   //   setTimeout(() => {
-  //     setDefaultHtml(defaultJson)
+  //     setDefaultHtml(_defaultHtml)
   //   }, 3000)
   // }, [])
 
@@ -164,7 +164,7 @@ export default function Editor() {
           {/* <FloatingTextFormatToolbarPlugin /> */}
           <ClickableLinkPlugin />
           <ImagesPlugin />
-          <CodeActionMenuPlugin/>
+          <CodeActionMenuPlugin />
           <CodeHighlightPlugin />
           <InsertMetionPlugin />
           <BindEditorPlugin bindEditor={bindEditor} />

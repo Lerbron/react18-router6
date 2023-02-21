@@ -6,6 +6,8 @@ import List from '@/containers/List'
 import NotFound from "@/containers/NotFound";
 import Graph from "@/containers/Graph";
 import Editor from "@/containers/Editor";
+import IDB from "@/containers/IDB";
+import DPlayer from "@/containers/DPlayer/DPlayer";
 
 const routes= [
   {
@@ -34,6 +36,14 @@ const routes= [
   {
     path: 'editor',
     element: Editor
+  },
+  {
+    path: '/idb',
+    element: IDB
+  },
+  {
+    path: '/player',
+    element: DPlayer
   },
   {
     path: '/404',

@@ -9,46 +9,46 @@ import AutoHeightInput from "@/components/Form/AutoHeightInput";
 import MultipleLinesText from "../../components/MultipleLinesText";
 
 import './index.scss'
- 
+
 export default () => {
-  const navigate= useNavigate()
-  const dispatch= useDispatch()
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
   const { count } = useSelector(state => state.counter)
   const { listInfo, userInfo } = useSelector(state => state.test)
-  const [page, setPage]= useState(1)
-  const [defaultValue, setDefaultValue]= useState('')
+  const [page, setPage] = useState(1)
+  const [defaultValue, setDefaultValue] = useState('')
 
 
-  const renderList= () => {
-    let { items }= listInfo
+  const renderList = () => {
+    let { items } = listInfo
     return items?.length > 0 && items?.map(item => {
-      return <div key={item.id} onClick={()=>goDetail(item.id)}>
+      return <div key={item.id} onClick={() => goDetail(item.id)}>
         <div>{item?.title}</div>
       </div>
     })
   }
 
-  const goDetail= (id) => {
+  const goDetail = (id) => {
     navigate(`/page/${id}`)
   }
 
-  const onAdd= () => {
+  const onAdd = () => {
     dispatch(increment())
   }
 
-  const onAddByPayload= () => {
+  const onAddByPayload = () => {
     dispatch(incrementByAmount(3))
   }
 
-  const _getNews= () => {
-    let params= {
+  const _getNews = () => {
+    let params = {
       limit: 20,
       page
     }
     dispatch(getHomeList(params))
   }
 
-  const onNext= () => {
+  const onNext = () => {
     setPage(page => page + 1)
   }
 
@@ -86,7 +86,7 @@ export default () => {
     <br />
     userId: {userInfo?.userId}<br />
     name: {userInfo?.name}<br />
-    age: { userInfo?.age}
+    age: {userInfo?.age}
     <br />
 
     <Button type="primary">antd button</Button>
