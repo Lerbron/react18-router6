@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const AntdDayjsWebpackPlugin= require('antd-dayjs-webpack-plugin');
+const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 const WebpackBar = require("webpackbar");
 const os = require('os');
 const threadPool = os.cpus().length - 1;
@@ -52,6 +52,10 @@ module.exports = {
   },
   module: {
     rules: [{
+        test: /.worker.js$/, // 匹配所有的xxx.worker.js
+        loader: 'worker-loader'
+      },
+      {
         test: /\.(tsx?|jsx?)$/,
         use: [{
             loader: 'thread-loader',
@@ -129,14 +133,14 @@ module.exports = {
     },
     extensions: ['.tsx', '.ts', '.js', '.jsx', '.json'],
   },
-  plugins: [  
+  plugins: [
     new WebpackBar({
       name: config.isDev ? "正在启动" : "正在打包",
       color: "#fa8c16",
       reporter: new Reporter()
     }),
     new CaseSensitivePathsPlugin(),
-		new FriendlyErrorsWebpackPlugin(),
+    new FriendlyErrorsWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html'),
       filename: 'index.html',
@@ -173,6 +177,6 @@ module.exports = {
     // })
 
   ],
-	stats: "errors-only",
+  stats: "errors-only",
 
 }

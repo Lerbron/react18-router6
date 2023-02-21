@@ -8,6 +8,7 @@ import Graph from "@/containers/Graph";
 import Editor from "@/containers/Editor";
 import IDB from "@/containers/IDB";
 import DPlayer from "@/containers/DPlayer/DPlayer";
+import Worker from "@/containers/Worker";
 
 const routes= [
   {
@@ -44,6 +45,10 @@ const routes= [
   {
     path: '/player',
     element: DPlayer
+  },
+  {
+    path: '/worker',
+    element: Worker
   },
   {
     path: '/404',
