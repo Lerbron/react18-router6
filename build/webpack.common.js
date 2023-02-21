@@ -53,7 +53,10 @@ module.exports = {
   module: {
     rules: [{
         test: /.worker.js$/, // 匹配所有的xxx.worker.js
-        loader: 'worker-loader'
+        loader: 'worker-loader',
+        options: {
+          filename: "js/[name].[contenthash].js",
+        },
       },
       {
         test: /\.(tsx?|jsx?)$/,

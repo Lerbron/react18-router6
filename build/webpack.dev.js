@@ -22,7 +22,7 @@ module.exports = merge(common, {
           minChunks: 2
         },
         vendor: {
-          test: /[\\/]node_modules[\\/](react|react-dom|redux|react-redux|redux-thunk|react-loadable|react-router-dom|antd)[\\/]/,
+          test: /[\\/]node_modules[\\/](react|react-dom|redux|react-redux|redux-thunk|react-loadable|react-router-dom)[\\/]/,
           name: 'vendor',
           chunks: 'all',
         }

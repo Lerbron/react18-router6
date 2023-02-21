@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { getStorageRedirectUrl } from '@/utils/storages/userStorages'
+import { Button } from "antd";
  
 export default () => {
   const navigate= useNavigate()
@@ -12,6 +13,6 @@ export default () => {
 
   return <div>
     Login Page
-    <button onClick={onLogin}>login</button>
+    <Button type= 'primary' onClick={onLogin}>login</Button>
   </div>
 }

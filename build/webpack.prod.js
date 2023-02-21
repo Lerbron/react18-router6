@@ -32,7 +32,7 @@ module.exports = merge(common, {
           minChunks: 2
         },
         vendor: {
-          test: /[\\/]node_modules[\\/](react|react-dom|redux|react-redux|redux-thunk|react-loadable|react-router-dom|antd)[\\/]/,
+          test: /[\\/]node_modules[\\/](react|react-dom|redux|react-redux|redux-thunk|react-loadable|react-router-dom)[\\/]/,
           name: 'vendor',
           chunks: 'all',
         }
@@ -47,7 +47,7 @@ module.exports = merge(common, {
       ignoreOrder: true,
     }),
     new CompressionPlugin({
-      test: /\.js(\?.*)?$/i,
+      test: /\.js$|\.s?css$|\.html$/,
       algorithm: 'gzip',
       compressionOptions: { level: 5 },
       exclude:'config.js',
