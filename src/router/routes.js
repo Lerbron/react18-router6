@@ -9,6 +9,7 @@ import Editor from "@/containers/Editor";
 import IDB from "@/containers/IDB";
 import DPlayer from "@/containers/DPlayer/DPlayer";
 import Worker from "@/containers/Worker";
+import Request from "@/containers/Request";
 
 const routes= [
   {
@@ -49,6 +50,10 @@ const routes= [
   {
     path: '/worker',
     element: Worker
+  },
+  {
+    path: '/request',
+    element: Request
   },
   {
     path: '/404',
