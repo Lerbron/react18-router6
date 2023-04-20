@@ -1,4 +1,4 @@
-import IDBUtil from 'idb-util-rollup';
+import IDBUtil from 'idb-util';
 
 export default new IDBUtil({
     dbName: 'TEST_IDB',
@@ -11,8 +11,14 @@ export default new IDBUtil({
       {
         name: 'LIST',
         keyPath: 'order',
-        indexes: []
+        indexes: [{indexName: 'name', keyPath: 'name'}, {indexName: 'id', keyPath: 'id'}]
       },
+
+      {
+        name: 'PEOPLE',
+        keyPath: 'id',
+        indexes: []
+      }
     ],
     version: 1
   })
