@@ -31,7 +31,7 @@ jobs:
           LASTSSH: "Doing something after copying"
         with:
           host: ${{ secrets.HOST }}
-          username: ${{ secrets.USER }}
-          key: ${{ secrets.PWD }}
+          username: ${{ secrets.USER_NAME }}
+          key: ${{ secrets.KEY }}
           source: "./dist" # 拷贝文件目录
           target: "/usr/share/nginx/html/react18-router6/"
