@@ -34,5 +34,8 @@ jobs:
           user: ${{ secrets.USER }}
           pass: ${{ secrets.PWD }}
           connect_timeout: 10s
-          local: './dist/*'
-          remote: /usr/share/nginx/html/react18-router6/
+          first_ssh: |
+            rm -rf /usr/share/nginx/html/react18-router6/dist
+            mkdir -p /usr/share/nginx/html/react18-router6/dist
+          scp: |
+            './dist/**' => /usr/share/nginx/html/react18-router6/dist/
